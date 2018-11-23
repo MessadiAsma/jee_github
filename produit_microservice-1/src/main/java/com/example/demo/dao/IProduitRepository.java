@@ -18,6 +18,14 @@ public interface IProduitRepository extends MongoRepository<Produit, Long> {
 	//public Page<Produit> produitParMC(@Param("x")String mc,Pageable p);
 	public List<Produit> findByDesignation(String des);
 	public Page<Produit> findByDesignation(String des, Pageable p);
+
+	/*@Query(value="{designation:'{$regex: ?0, $options:'i'}}")
+	public List<Produit> produitParMC(String designation);
 	
+	@Query(value="{designation:'{$regex: ?0, $options:'i'}}")
+	public Page<Produit> produitParMC(String designation,Pageable p);
+	
+	public List<Produit> findByDesignation(String des);
+	public Page<Produit> findByDesignation(String des, Pageable p);*/
 
 }
